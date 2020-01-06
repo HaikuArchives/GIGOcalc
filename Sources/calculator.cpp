@@ -1,5 +1,7 @@
 #include "calculator.h"
 
+#define PI 3.14159265358979489661923 // taken from math.h
+
 Calculator::Calculator(){
 	_theExpression = NULL;
 	_lastAnswer = NULL;
@@ -357,32 +359,38 @@ void Calculator::solve(int iStart, int iEnd){
 
 		switch (op){
 			case 's': {
-				secondOp = sin((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = sin((double)	_useRadians ? 
+secondOp : (secondOp * PI / 180.0));
 				break;
 			}
 			
 			case 'c': {
-				secondOp = cos((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = cos((double)	_useRadians ? 
+secondOp : (secondOp * PI / 180.0));
 				break;
 			}
 			
 			case 't': {
-				secondOp = tan((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = tan((double)	_useRadians ? 
+secondOp : (secondOp * PI / 180.0));
 				break;
 			}	
 			
 			case 'S': {
-				secondOp = asin((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = asin((double)	
+_useRadians ? secondOp : (secondOp * PI / 180.0));
 				break;
 			}
 			
 			case 'C': {
-				secondOp = acos((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = acos((double)	
+_useRadians ? secondOp : (secondOp * PI / 180.0));
 				break;
 			}
 			
 			case 'T': {
-				secondOp = atan((double)	_useRadians ? secondOp : (secondOp * PI / 180.0));
+				secondOp = atan((double)	
+_useRadians ? secondOp : (secondOp * PI / 180.0));
 				break;
 			}	
 			
