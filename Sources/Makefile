@@ -5,7 +5,7 @@
 ## architecture of Haiku.
 
 # The name of the binary.
-NAME = BeApp
+NAME = GIGOcalc
 TARGET_DIR = .
 
 # The type of binary, must be one of:
@@ -58,8 +58,7 @@ RSRCS =  Resource.rsrc
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS =  /boot/system/develop/lib/libbe.so \
- /boot/system/lib/libsupc++.so
+LIBS =  be $(STDCPPLIBS)
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
@@ -71,18 +70,16 @@ LIBPATHS =
 #	Additional paths to look for system headers. These use the form
 #	"#include <header>". Directories that contain the files in SRCS are
 #	NOT auto-included here.
-SYSTEM_INCLUDE_PATHS =  /boot/system/develop/headers/be \
- /boot/system/develop/headers/cpp \
- /boot/system/develop/headers/posix
+SYSTEM_INCLUDE_PATHS = 
 
 #	Additional paths paths to look for local headers. These use the form
 #	#include "header". Directories that contain the files in SRCS are
 #	automatically included.
-LOCAL_INCLUDE_PATHS =  .
+LOCAL_INCLUDE_PATHS = .
 
 #	Specify the level of optimization that you want. Specify either NONE (O0),
 #	SOME (O1), FULL (O2), or leave blank (for the default optimization level).
-OPTIMIZE := NONE
+OPTIMIZE := FULL
 
 # 	Specify the codes for languages you are going to support in this
 # 	application. The default "en" one must be provided too. "make catkeys"
